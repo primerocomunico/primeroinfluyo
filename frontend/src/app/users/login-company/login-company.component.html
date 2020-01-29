@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-12 col-sm-6 center form-signin">
+
+      <div class="row">
+        <div class="col-12">
+           <div *ngIf="_auth.flagAlert == true" class="alert">
+             <div class="alert alert-success">Te has registrado correctamente :)</div>
+           </div>
+           <div *ngIf="_auth.flagAlertWrong == true" class="alert">
+             <div class="alert alert-danger">Mail o password incorrecto</div>
+           </div>
+           <div *ngIf="flagAlertEmptyField == true" class="alert">
+             <div class="alert alert-warning">Te falta algún dato, revisa de nuevo</div>
+           </div>
+        </div>
+      </div>
+     
+
+      <div class="row">
+        <div class="col-12">
+          <h4>Accede como Empresa</h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="far fa-envelope"></i></span>
+            </div>
+            <input [(ngModel)]="companyMail" id="companyMail" type="text" class="form-control"
+              placeholder="Mail de acceso">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+            </div>
+            <input [(ngModel)]="companyPassword" id="companyPassword" type="password"
+              class="form-control" placeholder="Password">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-outline-secondary btn-lg" type="button" (click)="login()">Submit
+            <i class="fas fa-sign-in-alt"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

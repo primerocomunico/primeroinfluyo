@@ -1,0 +1,262 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-12 col-sm-8 center form-signin">
+
+      <div class="row">
+        <div class="col-12">
+          <h4>Crea tu propia campaña de Marketing de Influencers</h4>
+          <p>Revisaremos todos los datos proporcionados antes de activarla y mostrarla a nuestros
+            influencers.</p>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col-12">
+          <!-- nombre empresa -->
+          <p class="col-form-label">Nombre de la campaña</p>
+          <div class="input-group mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="fas fa-chart-line"></i></span>
+            </div>
+            <input [(ngModel)]="_data.dataCampaign['campaignTitle']" id="campaignTitle" type="text"
+              class="form-control">
+          </div>
+          <small class="form-text text-muted mb-1">Utiliza una frase que describa de forma breve y
+            directa el tipo de influencer que buscas.</small>
+          <!-- url imagen -->
+          <p class="col-form-label">URL de la imagen de campaña</p>
+          <div class="input-group mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="far fa-image"></i></span>
+            </div>
+            <input [(ngModel)]="_data.dataCampaign['campaignImg']" id="campaignImg" type="text" class="form-control"
+              placeholder="Pega aquí la url de tu imagen.">
+          </div>
+          <small class="form-text text-muted mb-1">Utiliza una imagen que "enganche". Las
+            dimensiones deben ser un mínimo de 600 x 400 px en formato horizontal.</small>
+          <!-- descripción -->
+          <p class="col-form-label">Descripción de la campaña</p>
+          <!-- desktop -->
+          <div class="input-group mb-4 desktop">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-tasks"></i></span>
+            </div>
+            <textarea [(ngModel)]="_data.dataCampaign['campaignDes']" id="campaignDes" class="form-control" rows="5"
+              placeholder="Cuéntanos en unas pocas líneas lo que buscas conseguir / ofrecer a los influencers que buscas con tu campaña. Ej. Hemos lanzado un nuevo producto de belleza y nos encantaría contar con influencers mujeres de entre 18 y 25 años de toda la península, para que prueben el producto y compartan su experiencia en sus perfiles de Instagram."></textarea>
+          </div>
+          <!-- mobile -->
+          <div class="input-group mb-4 mobile">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-tasks"></i></span>
+            </div>
+            <textarea [(ngModel)]="_data.dataCampaign['campaignDes']" id="campaignDes" class="form-control" rows="12"
+              placeholder="Cuéntanos en unas pocas líneas lo que buscas conseguir / ofrecer a los influencers que buscas con tu campaña. Ej. Hemos lanzado un nuevo producto de belleza y nos encantaría contar con influencers mujeres de entre 18 y 25 años de toda la península, para que prueben el producto y compartan su experiencia en sus perfiles de Instagram."></textarea>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <h4>Referencias para la campaña</h4>
+              <p>Información adicional que será de utilidad para los influncers cuando presenten su
+                candidatura.</p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+            <div class="col-12">
+              <!-- ubicación tienda -->
+              <p class="col-form-label">Ubicación de tu negocio</p>
+              <div class="input-group mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i
+                      class="fas fa-map-marker-alt"></i></span>
+                </div>
+                <input [(ngModel)]="_data.dataCampaign['campaignStreet']" id="campaignStreet" type="text"
+                  class="form-control">
+              </div>
+              <small class="form-text text-muted mb-2">Ya sea porque necesitas que visiten tu
+                negocio o como referencia geográfica. Incluye la cale y número.</small>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <p class="col-form-label">Ciudad</p>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i
+                      class="fas fa-city"></i></span>
+                </div>
+                <input [(ngModel)]="_data.dataCampaign['campaignCity']" id="campaignCity" type="text"
+                  class="form-control">
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <p class="col-form-label">Código postal</p>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i
+                      class="fas fa-envelope-open-text"></i></span>
+                </div>
+                <input [(ngModel)]="_data.dataCampaign['campaignZipcode']" id="campaignZipcode" type="text"
+                  class="form-control">
+              </div>
+            </div>
+            <div class="col-12">
+              <!-- descripción influencers -->
+              <p class="col-form-label">Especificaciones para el influencer</p>
+              <!-- desktop -->
+              <div class="input-group mb-3 desktop">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i
+                      class="fas fa-tasks"></i></span>
+                </div>
+                <textarea [(ngModel)]="_data.dataCampaign['campaignConfig']" id="campaignConfig" class="form-control"
+                  rows="5"
+                  placeholder="Explica detalladamente las características que debe cumplir el influencer que buscas para participar en tu campaña. Ej. Necesito un méximo de 10 influencers mujeres de cualquier parte de la Península Ibérica (mayoritariamente Andalucia, Madrid y Valencia) que tengas entre 18 y 25 años y que su perfil este enfocado a belleza y cuidado personal. Abstenerce chicas que hayan colaborado con la marca XXXXX."></textarea>
+              </div>
+              <!-- mobile -->
+              <div class="input-group mb-3 mobile">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i
+                      class="fas fa-tasks"></i></span>
+                </div>
+                <textarea [(ngModel)]="_data.dataCampaign['campaignConfig']" id="campaignConfig" class="form-control"
+                  rows="12"
+                  placeholder="Explica detalladamente las características que debe cumplir el influencer que buscas para participar en tu campaña. Ej. Necesito un méximo de 10 influencers mujeres de cualquier parte de la Península Ibérica (mayoritariamente Andalucia, Madrid y Valencia) que tengas entre 18 y 25 años y que su perfil este enfocado a belleza y cuidado personal. Abstenerce chicas que hayan colaborado con la marca XXXXX."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <!-- web -->
+              <p class="col-form-label">Página web</p>
+              <div class="input-group mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i
+                      class="fas fa-globe"></i></span>
+                </div>
+                <input [(ngModel)]="_data.dataCampaign['campaignUrl']" id="campaignUrl" type="text" class="form-control">
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <!-- fecha vencimiento -->
+              <p class="col-form-label">Fecha de vencimiento</p>
+              <div class="input-group mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i
+                      class="fas fa-calendar-times"></i></span>
+                </div>
+                <input [(ngModel)]="_data.dataCampaign['campaignDate']" id="campaignDate" type="date"
+                  class="form-control">
+              </div>
+              <small class="form-text text-muted mb-4">Indica la fecha límite para la recepción de
+                candidaturas de influencers.</small>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <h4>Categorías de los influencers que buscas</h4>
+              <p>Elige una o varias categorías según el perfil que mejor defina a los influencers
+                que buscas.</p>
+            </div>
+          </div>
+          <hr>
+
+          <!-- categorías -->
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_data.dataCampaign['campaignFashion']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-tshirt icon"></i> Fashion</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_data.dataCampaign['campaignFitness']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-dumbbell icon"></i> Fitness</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_data.dataCampaign['campaignFoodie']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-utensils icon"></i> Foodie</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_data.dataCampaign['campaignLifestyle']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-cocktail icon"></i> Lifestyle</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_data.dataCampaign['campaignBeauty']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-hand-holding-heart icon"></i> Beauty</span>
+            </label>
+          </p>
+          <!-- todos los campos -->
+        </div>
+      </div>
+
+      <!-- activar campaña -->
+      <div *ngIf="userAdmin == 'userAdmin'" class="row text-center text-uppercase">
+        <div class="col-12">
+          <hr>
+          <h5 class="activar">Revisar la campaña antes de activarla</h5>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_data.dataCampaign['campaignActive']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><b>ACTIVAR</b></span>
+            </label>
+          </p>
+          <hr>
+        </div>
+      </div>
+
+      <!-- boton only user -->
+      <div class="row" *ngIf="userAdmin != 'userAdmin'">
+        <div class="col-12 col-sm-6 text-center">
+          <button class="btn btn-outline-success" type="button" (click)="update()">Actualizar
+            <i class="far fa-thumbs-up"></i>
+          </button>
+        </div>
+        <div class="col-12 col-sm-6 text-center">
+           <a [routerLink]="['/bienvenido']" class="btn btn-outline-secondary"
+                >Volver <i class="fas fa-angle-double-left icon-button"></i
+              ></a>
+        </div>
+      </div>
+      
+      <!-- boton userAdmin -->
+      <div class="row" *ngIf="userAdmin == 'userAdmin'">
+        <div class="col-12 col-sm-4 text-center">
+          <button class="btn btn-outline-success" type="button" (click)="update()">Actualizar
+            <i class="far fa-thumbs-up"></i>
+          </button>
+        </div>
+          <div class="col-12 col-sm-4 text-center">
+           <a [routerLink]="['/bienvenido']" class="btn btn-outline-secondary"
+                >Volver <i class="fas fa-angle-double-left icon-button"></i
+              ></a>
+        </div>
+        <div class="col-12 col-sm-4 text-center">
+          <button class="btn btn-outline-danger" type="button" (click)="delete()">Eliminar
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- fin del container -->
+    </div>
+  </div>
+</div>

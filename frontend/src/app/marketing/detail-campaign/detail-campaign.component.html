@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <img src="{{ data['campaignImg'] }}" class="card-img-top" alt="{{ data['campaignTitle'] }}" />
+        <div class="card-body">
+          <p *ngIf="data['campaignActive'] == false" class="noactive">
+            CAMPAÑA NO PUBLICADA
+          </p>
+          <h5 class="card-title titulo">{{ data["campaignTitle"] }}</h5>
+          <i class="fas fa-satellite-dish"></i>
+          <span class="subtitle">Descripción de la campaña</span>
+          <p>{{ data["campaignDes"] }}</p>
+          <i class="fas fa-map-marker-alt"></i>
+          <span class="subtitle">Aquí puedes encontrar la tienda</span>
+          <p>
+            <span>{{ data["campaignStreet"] }}</span> <span>, </span>
+            <span>{{ data["campaignCity"] }}</span>
+          </p>
+          <i class="fas fa-sign-in-alt"></i>
+          <span class="subtitle">Puedes visitar su web</span>
+          <p>
+            <a href="{{ data['campaignUrl'] }}" target="_blank">{{
+              data["campaignUrl"]
+            }}</a>
+          </p>
+          <i class="far fa-calendar-alt"></i>
+          <span class="subtitle">Fecha límite para participar</span>
+          <p>{{ data["campaignDate"] }}</p>
+          <i class="fas fa-user-edit"></i>
+          <span class="subtitle">Aspectos a tomar en cuenta</span>
+          <p>{{ data["campaignConfig"] }}</p>
+          <i class="fas fa-clipboard-check"></i>
+          <span class="subtitle">Categorías del influencer</span>
+          <p></p>
+          <div class="badge badge-pill badge-light" *ngIf="data['campaignFashion'] == true">
+            <span>Fashion</span>
+          </div>
+          <div class="badge badge-pill badge-light" *ngIf="data['campaignFitness'] == true">
+            <span>Fitness</span>
+          </div>
+          <div class="badge badge-pill badge-light" *ngIf="data['campaignFoodie'] == true">
+            <span>Foodie</span>
+          </div>
+          <div class="badge badge-pill badge-light" *ngIf="data['campaignLifestyle'] == true">
+            <span>Lifestyle</span>
+          </div>
+          <div class="badge badge-pill badge-light" *ngIf="data['campaignBeauty'] == true">
+            <span>Beauty</span>
+          </div>
+          <p></p>
+
+          <!-- Botones para influencer -->
+          <div *ngIf="tagUser == 'influencer'" class="row">
+            <div class="col-12 col-sm-6 text-center">
+              <a href="mailto:sergio@primerocomunico.es?subject=Influencer para la campaña {{
+                  data['campaignTitle']
+                }}" class="btn btn-success btn-lg">¡Inscríbete! <i class="fas fa-check-circle icon-button"></i></a>
+            </div>
+            <div class="col-12 col-sm-6 text-center">
+              <a [routerLink]="['/bienvenido']" class="btn btn-secondary btn-lg">Volver <i
+                  class="fas fa-angle-double-left icon-button"></i></a>
+            </div>
+          </div>
+
+          <!-- Botones para empresa que puede editar sus campañas -->
+          <div *ngIf="data['campaignBrand'] == campaignAuth && campaignAuth != 'userAdmin'" class="row">
+            <div class="col-12 col-sm-6 text-center">
+              <a [routerLink]="['/editcampaign/' + id]" class="btn btn-warning btn-lg">Editar <i
+                    class="fas fa-edit icon-button"></i></a>
+            </div>
+            <div class="col-12 col-sm-6 text-center">
+              <a [routerLink]="['/bienvenido']" class="btn btn-secondary btn-lg">Volver <i
+                  class="fas fa-angle-double-left icon-button"></i></a>
+            </div>
+          </div>
+
+          <!-- Botones para superAdmin -->
+          <div *ngIf="campaignAuth == 'userAdmin'" class="row">
+            <div class="col-12 col-sm-6 text-center">
+              <a [routerLink]="['/editcampaign/' + id]" class="btn btn-warning btn-lg">Editar <i
+                    class="fas fa-edit icon-button"></i></a>
+            </div>
+            <div class="col-12 col-sm-6 text-center">
+              <a [routerLink]="['/bienvenido']" class="btn btn-secondary btn-lg">Volver <i
+                  class="fas fa-angle-double-left icon-button"></i></a>
+            </div>
+          </div>
+
+          <!-- Botón para empresa que no puede editar -->
+          <div *ngIf="data['campaignBrand'] != campaignAuth && tagUser == 'company' && campaignAuth != 'userAdmin'" class="row">
+            <div class="col-12 text-center">
+               <a [routerLink]="['/bienvenido']" class="btn btn-secondary btn-lg">Volver <i
+                  class="fas fa-angle-double-left icon-button"></i></a>
+            </div>
+          </div>
+          <div class="text-center">
+
+            <!-- <div *ngIf="campaignAuth == 'userAdmin'" class="center editar-button">
+             <a [routerLink]="['/editcampaign/'+id]" class="waves-effect waves-light btn-large center"><i class="material-icons right">add</i>Editar</a>
+           </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

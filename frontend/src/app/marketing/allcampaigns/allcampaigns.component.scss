@@ -1,0 +1,92 @@
+.allcenter {
+  margin: auto;
+  justify-content: center;
+}
+
+.portada {
+  width: 400px;
+}
+
+.titulo {
+  font-weight: 460;
+  color: #757575;
+}
+
+.subtitle {
+font-size: 18px;
+font-weight: 600;
+}
+
+.btn {
+  color: white;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.card {
+  width: 32rem;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    margin: 10px 0;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin: 10px 0;
+  }
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  margin: 10px;
+
+  .fas,
+  .far {
+    margin-right: 20px;
+    color: #F44336;
+    font-size: 18px;
+  }
+  .fa-plus {
+    color: white;
+    font-size: 20px;
+  }
+  .badge {
+    padding: 10px 15px;
+    margin: 0 3px;
+    background: #E4E4E4;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+.center {
+  margin: auto;
+  justify-content: center;
+  width: 75%;
+}
+
+.space-btn {
+  margin: 5px 0;
+}
+
+.alert {
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 1px;
+    p {
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+.noactive {
+  color: white;
+  background: #F44336;
+  text-align: center;
+  width: 70%;
+}
+
+//

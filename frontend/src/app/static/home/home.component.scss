@@ -1,0 +1,23 @@
+.container {
+  margin-bottom: 100px;
+}
+
+.space-btn {
+    margin: 5px 0;
+}
+
+.space-btn2 {
+    margin: 10px;
+}
+
+.desktop {
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
+}
+
+.mobile {
+    @media only screen and (min-width: 640px) {
+      display: none;
+    }
+}

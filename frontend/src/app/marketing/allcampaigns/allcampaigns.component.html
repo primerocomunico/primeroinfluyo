@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="_data.flagAlert == true" class="col-12">
+      <div class="alert alert-success">
+        <p>Tu campaña se ha enviado correctamente. <span>Tardaremos de 48 a 72 horas en aprobarla</span></p>
+      </div>
+    </div>
+    <div *ngIf="_data.flagAlertDelete == true" class="col-12">
+      <div class="alert alert-danger">
+        <p>Tu campaña se ha <span>ELIMINADO</span> correctamente.</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-sm-6 text-center space-btn">
+      <div *ngIf="tagUser == 'influencer'">
+        <a (click)='_auth.loadDataInfluencer(dataIdUser)' class="btn btn-info btn-lg">Accede a tu
+          perfil</a>
+      </div>
+      <div *ngIf="tagUser == 'company'">
+        <a (click)='_auth.loadDataCompany(dataIdUser)' class="btn btn-info btn-lg">Accede a tu
+          perfil</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-sm-6 text-center space-btn">
+      <div>
+        <a (click)='logout()' class="btn btn-danger btn-lg">Cierra la sesión</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 col-sm-6" *ngFor="let campaign of _data.data; let j = index">
+
+      <div class="card">
+        <img src="{{campaign.campaignImg}}" class="card-img-top" alt="{{campaign['campaignTitle']}}">
+        <div class="card-body">
+          <p *ngIf="campaign['campaignActive'] == false" class="noactive">CAMPAÑA NO PUBLICADA</p>
+          <h5 class="card-title titulo">{{campaign["campaignTitle"]}}</h5>
+          <i class="fas fa-satellite-dish"></i> <span class="subtitle">Descripción de la
+            campaña</span>
+          <p class="card-text">{{campaign["campaignDes"]}}</p>
+          <i class="fas fa-clipboard-check"></i> <span class="subtitle">Categorías del
+            influencer</span>
+            <p></p>
+            <div class="badge badge-pill badge-light"
+              *ngIf="campaign['campaignFashion'] == true">
+              <span>Fashion</span>
+            </div>
+            <div class="badge badge-pill badge-light" *ngIf="campaign['campaignFitness'] == true">
+              <span>Fitness</span>
+            </div>
+            <div class="badge badge-pill badge-light" *ngIf="campaign['campaignFoodie'] == true">
+              <span>Foodie</span>
+            </div>
+            <div class="badge badge-pill badge-light" *ngIf="campaign['campaignLifestyle'] == true">
+              <span>Lifestyle</span>
+            </div>
+            <div class="badge badge-pill badge-light" *ngIf="campaign['campaignBeauty'] == true">
+              <span>Beauty</span>
+            </div>
+            <p></p>
+          <div class="text-center">
+            <a [routerLink]="['/campaign/'+campaign['_id']]"
+              class="btn btn-success btn-lg">Saber más! <i class="fas fa-plus"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

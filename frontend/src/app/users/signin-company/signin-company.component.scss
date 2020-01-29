@@ -1,0 +1,25 @@
+.form-signin {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #F5F5F5;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  .form-check-input {
+    margin: 5px 0 3px 5px;
+    width: 15px;
+    height: 15px;
+  }
+  .checkbox-text {
+    margin: 10px 0 0 25px;
+  }
+  p {
+    margin: 3px;
+  }
+}
+
+.alert {
+    font-size: 16px;
+    text-align: center;
+    padding: 10px !important;
+    margin: 3px 0;
+  }

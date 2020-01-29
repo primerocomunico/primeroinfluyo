@@ -1,0 +1,235 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-12 col-sm-8 center form-signin">
+
+      <div class="row">
+        <div class="col-12">
+          <h4>Datos de contacto</h4>
+          <p>Es importante aportar todos tus datos para participar en nuestras campañas.</p>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col-12">
+          <!-- Tu nombre -->
+          <div class="input-group mb-3">
+            <label class="col-sm-2 col-form-label">Tu nombre</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.data['userName']" id="userName" type="text"
+              class="form-control">
+          </div>
+          <!-- Tu mail -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu mail</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="far fa-envelope"></i></span>
+            </div>
+            <input disabled [(ngModel)]="_auth.data['userMail']" id="userMail" type="text"
+              class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Este dato no es editable. Si necesitas cambiarlo,
+            deberás crear un nuevo usuario.</small>
+          <!-- Tu instagram -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu Instagram</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
+            </div>
+            <input disabled [(ngModel)]="_auth.data['userInstagram']" id="userInstagram" type="text"
+              class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Este dato no es editable. Si necesitas
+            cambiarlo,
+            deberás crear un nuevo usuario.</small>
+          <!-- Tu password -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu password</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+            </div>
+            <input [(ngModel)]="userPassword" id="userPassword" type="password"
+              class="form-control" placeholder="·········">
+          </div>
+          <small class="form-text text-muted mb-3">NO edites este campo si quieres conservar tu password actual.</small>
+          <!-- teléfono -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu teléfono</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.data['userPhone']" id="userPhone" type="text"
+              class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Introduce los 9 dígitos de tu número sin
+            espacios y sin puntos.</small>
+
+          <div class="row">
+            <div class="col-12">
+              <h4>Dirección postal</h4>
+              <p>La necesitaremos, para que cuando participes en una campaña podamos enviarte
+                productos.</p>
+            </div>
+          </div>
+          <hr>
+
+          <!-- calle y número -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu calle y Nº</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="fas fa-street-view"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.data['userStreet']" id="userStreet" type="text"
+              class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Nombre completo de calle, número, piso,
+            puerta, escalera, etc.</small>
+          <!-- cuidad -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu ciudad</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.data['userCity']" id="userCity" type="text"
+              class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Actualmente solo aceptamos candidaturas de la
+            Península Ibérica.</small>
+          <!-- cp -->
+          <div class="input-group mb-3">
+            <label class="col-sm-2 col-form-label">Código Postal</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="fas fa-envelope-open-text"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.data['userZipcode']" id="userZipcode" type="text"
+              class="form-control">
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <h4>Datos personales</h4>
+              <p>Con ellos nos ayudarás para ofrecerte las mejores campañas.</p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <!-- nacimiento -->
+              <label class="col-sm-2 col-form-label">Cumpleaños</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i
+                      class="far fa-calendar-check"></i></span>
+                </div>
+                <input [(ngModel)]="_auth.data['userBirthday']" id="userBirthday" type="date"
+                  class="form-control">
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <!-- sexo -->
+              <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Eres...</label>
+                <div class="input-field col s6">
+                  <p>
+                    <label>
+                      <input [(ngModel)]="_auth.data['userSex']" type="radio" value="Mujer"
+                        class="space">
+                      <span><i class="fas fa-venus icon"></i> Mujer</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input [(ngModel)]="_auth.data['userSex']" type="radio" value="Hombre"
+                        class="space">
+                      <span><i class="fas fa-mars icon"></i> Hombre</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input [(ngModel)]="_auth.data['userSex']" type="radio" value="Asexual"
+                        class="space">
+                      <span><i class="fas fa-transgender icon"></i> Prefiero no decir</span>
+                    </label>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <p>Escoge una o varias categorías que mejor definan tu perfil como influencer.</p>
+            </div>
+          </div>
+
+          <!-- categorías -->
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.data['userFashion']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-tshirt icon"></i> Fashion</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.data['userFitness']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-dumbbell icon"></i> Fitness</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.data['userFoodie']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-utensils icon"></i> Foodie</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.data['userLifestyle']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-cocktail icon"></i> Lifestyle</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.data['userBeauty']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-hand-holding-heart icon"></i> Beauty</span>
+            </label>
+          </p>
+
+          <!-- todos los campos -->
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-12 col-sm-4 text-center">
+          <button class="btn btn-outline-success" type="button"
+            (click)="update()">Actualizar
+            <i class="fas fa-user-edit"></i>
+          </button>
+        </div>
+        <div class="col-12 col-sm-4 text-center">
+          <a [routerLink]="['/bienvenido']" class="btn btn-outline-secondary btn-outline">Volver <i
+                  class="fas fa-angle-double-left icon-button"></i></a>
+        </div>
+        <div class="col-12 col-sm-4 text-center">
+          <button class="btn btn-outline-danger" type="button" (click)="delete()">Borrar
+            usuario
+            <i class="fas fa-skull-crossbones"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- container -->
+    </div>
+  </div>
+</div>

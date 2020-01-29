@@ -1,0 +1,224 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-12 col-sm-8 center form-signin">
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <button class="btn btn-outline-success btn-lg campaign" type="button" [routerLink]="['/campaign/']">Crea
+            una campaña
+            <i class="fas fa-user-edit"></i>
+          </button>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-12">
+          <h4>Datos de tu empresa</h4>
+          <p>Es importante aportar todos tus datos para validar tus campañas.</p>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col 12">
+          <!-- nombre empresa -->
+          <div class="input-group mb-3">
+            <label class="col-sm-2 col-form-label">Empresa</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="fas fa-industry"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.dataCompany['companyName']" id="companyName" type="text"
+              class="form-control">
+          </div>
+          <!-- contacto -->
+          <div class="input-group mb-3">
+            <label class="col-sm-2 col-form-label">Contacto</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="fas fa-user-tie"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.dataCompany['companyContact']" id="companyContact" type="text"
+              class="form-control">
+          </div>
+          <!-- teléfono -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Teléfono</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.dataCompany['companyPhone']" id="companyPhone" type="text"
+              class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Introduce los 9 dígitos de tu número sin
+            espacios y sin puntos.</small>
+
+          <div class="row">
+            <div class="col-12">
+              <h4>Dirección postal</h4>
+              <p>La necesitaremos, para que cuando gestionemos tus campañas.</p>
+            </div>
+          </div>
+          <hr>
+
+          <!-- calle y número -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu calle y Nº</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="fas fa-street-view"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.dataCompany['companyStreet']" id="companyStreet" type="text"
+              class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Nombre completo de calle, número, piso,
+            puerta, escalera, etc.</small>
+          <!-- cuidad -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu ciudad</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-city"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.dataCompany['companyCity']" id="companyCity" type="text"
+              class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Actualmente solo aceptamos empresas dentro de la
+            Península Ibérica.</small>
+          <!-- cp -->
+          <div class="input-group mb-3">
+            <label class="col-sm-2 col-form-label">Código Postal</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="fas fa-envelope-open-text"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.dataCompany['companyZipcode']" id="companyZipcode" type="text"
+              class="form-control">
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <h4>Categorías</h4>
+              <p>Ayúdanos a identificar el tipo de producto o servicio que ofreces eligiendo una o
+                varias categorías.</p>
+            </div>
+          </div>
+          <hr>
+
+          <!-- categorías -->
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.dataCompany['companyFashion']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-tshirt icon"></i> Fashion</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.dataCompany['companyFitness']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-dumbbell icon"></i> Fitness</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.dataCompany['companyFoodie']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-utensils icon"></i> Foodie</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.dataCompany['companyLifestyle']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-cocktail icon"></i> Lifestyle</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.dataCompany['companyBeauty']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="fas fa-hand-holding-heart icon"></i> Beauty</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" [(ngModel)]="_auth.dataCompany['companyOther']"
+                [ngModelOptions]="{standalone: true}" class="space" />
+              <span><i class="far fa-meh-rolling-eyes icon"></i> Otro tipo de negocio</span>
+            </label>
+          </p>
+
+          <div class="row">
+            <div class="col-12">
+              <h4>Datos de registro</h4>
+              <p>A modo de control, compartimos tus datos con los que te has registrado como
+                empresa.</p>
+            </div>
+          </div>
+          <hr>
+
+          <!-- Tu mail -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu mail</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i
+                  class="far fa-envelope"></i></span>
+            </div>
+            <input disabled [(ngModel)]="_auth.dataCompany['companyMail']" id="companyMail"
+              type="text" class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Este dato no es editable. Si necesitas
+            cambiarlo, solicítalo <a href="mailto:empresas@primeroinfluyo.es">haciendo click
+              aquí</a> explicando los motivos.</small>
+          <!-- instagram -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu Instagram</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
+            </div>
+            <input [(ngModel)]="_auth.dataCompany['companyInstagram']" id="companyInstagram"
+              type="text" class="form-control">
+          </div>
+          <small class="form-text text-muted mb-3">Si tu empresa tiene perfil de Instagram, será muy útil para campañas de captación.</small>
+          <!-- Tu password -->
+          <div class="input-group mb-1">
+            <label class="col-sm-2 col-form-label">Tu password</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+            </div>
+            <input [(ngModel)]="companyPassword" id="companyPassword" type="password"
+              class="form-control" placeholder="········">
+          </div>
+          <small class="form-text text-muted mb-3">NO edites este campo si quieres conservar tu
+            password actual.</small>
+
+          <!-- todos los campos -->
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-12 col-sm-4 text-center">
+          <button class="btn btn-outline-success btn" type="button"
+            (click)="update()">Actualizar
+            <i class="fas fa-user-edit"></i>
+          </button>
+        </div>
+        <div class="col-12 col-sm-4 text-center">
+           <a [routerLink]="['/bienvenido']" class="btn btn-outline-secondary btn"
+                >Volver <i class="fas fa-angle-double-left icon-button"></i
+              ></a>
+        </div>
+        <div class="col-12 col-sm-4 text-center">
+          <button class="btn btn-outline-danger btn" type="button" (click)="delete()">Borrar
+            registro
+            <i class="fas fa-skull-crossbones"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- container -->
+    </div>
+  </div>
+</div>
